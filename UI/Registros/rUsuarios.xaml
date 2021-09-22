@@ -1,0 +1,73 @@
+﻿<Window x:Class="RegistroCompleto2.UI.Registros.rUsuarios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroCompleto2.UI.Registros"
+        mc:Ignorable="d"
+        Title="Registros Usuarios" Height="300" Width="668">
+    <Grid>
+
+        <StackPanel Orientation="Vertical" Margin="15">
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="ID"></Label>
+                <TextBox x:Name="idTextBox" Height="18" Width="120" Margin="32,0,0,0" Text="{Binding UsuarioID}"></TextBox>
+                <Button x:Name="BuscarButton" Margin="10,0,0,0" Click="BuscarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Buscar.png" Height="18" Width="20"/>
+                        <Label Content="Buscar"></Label>
+                    </StackPanel>
+                </Button>
+                <CheckBox Content="Activo" x:Name="activoCheckBox" Margin="282,0,0,0"></CheckBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Content="Alias"></Label>
+                <TextBox x:Name="aliasTextBox" Height="18" Width="200" Margin="20,0,0,0" Text="{Binding alias}"></TextBox>
+                <Label Content="Nivel" Margin="177,0,0,0"></Label>
+                <ComboBox x:Name="nivelComboBox" Width="120" SelectedValue="{Binding RolID}" ></ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Content="Nombre"></Label>
+                <TextBox x:Name="nombreTextBox" Height="18" Width="200" Text="{Binding nombres}"></TextBox>
+                <Label Content="Fecha Creacion" Margin="100,0,0,0"></Label>
+                <DatePicker x:Name="fechaCreacionDatePicker" SelectedDate="{Binding fechaingreso}" SelectedDateFormat="Short"></DatePicker>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Content="Email"></Label>
+                <TextBox x:Name="emailTextBox" Height="18" Width="250" Margin="12,0,0,0" Text="{Binding email}"></TextBox>
+                <Label Content="Clave" Margin="100,0,0,0"></Label>
+                <TextBox x:Name="claveTextBox" Height="18" Width="150" Text="{Binding clave}"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Button x:Name="nuevoButton" Margin="20,0,0,0" Height="30" Click="nuevoButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Nuevo.png" Height="18" Width="20"></Image>
+                        <Label Content="Nuevo"></Label>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="guardarButton" Margin="15" Click="guardarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Guardar.png" Height="18" Width="20"></Image>
+                        <Label Content="Guardar"></Label>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="eliminarButton" Height="30" Click="eliminarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Eliminar.png" Height="18" Width="20"></Image>
+                        <Label Content="Eliminar"></Label>
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+            
+        </StackPanel>
+        
+    </Grid>
+</Window>
